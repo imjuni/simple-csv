@@ -1,0 +1,33 @@
+{
+  "name": "simple-csv",
+  "version": "0.1.0",
+  "description": "Simple CSV generator, no blocking set big size data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">= 4.x.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imjuni/simple-csv.git"
+  },
+  "keywords": [
+    "csv"
+  ],
+  "author": "ByungJoon Lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imjuni/simple-csv/issues"
+  },
+  "homepage": "https://github.com/imjuni/simple-csv#readme",
+  "dependencies": {
+    "debug": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "co": "^4.6.0",
+    "mocha": "^2.4.5"
+  }
+}
