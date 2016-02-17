@@ -1,6 +1,8 @@
 'use strict';
 
 var co = require('co');
+var http = require('http');
+var url = require('url');
 var debug = require('debug')('ssc:example');
 var SimpleCSV = require('../lib/csv.js');
 
@@ -14,16 +16,37 @@ let data = [
   ['한', '글', '입', '력']
 ];
 
-let csv = new SimpleCSV(data);
+let server = http.createServer((req, res) => {
+  var urlObj = url.parse(req.url, true, false);
 
-co(function* a () {
-  csv.init();
-  yield csv.append(data);
-  yield csv.write('test.csv');
-}).then(function () {
-  debug('Complete, ... generated test.csv')
-}).catch(function (err) {
-  debug('Error caused, ...');
-  debug(err.message);
-  debug(err.stack);
+  if (urlObj.pathname === '/excel') {
+
+    co(function* () {
+      let csv = new SimpleCSV(data);
+
+      yield csv.append(data);
+      yield csv.write('test.csv');
+
+      return csv;
+    }).then(function (csv) {
+      debug('Complete, ... generated test.csv');
+
+      res.setHeader('Content-disposition', 'attachment; filename=test.csv');
+      res.setHeader('content-transfer-encoding', 'binary');
+      res.setHeader('Content-Type', 'application/octet-stream');
+      res.statusCode = 200;
+      res.end(csv.Buf);
+    }).catch(function (err) {
+      debug('Error caused, ...');
+      debug(err.message);
+      debug(err.stack);
+    });
+  } else {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.write('Hello');
+    res.end();
+  }
 });
+
+server.listen(9393);
+

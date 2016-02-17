@@ -17,7 +17,6 @@ let data = [
 let csv = new SimpleCSV(data);
 
 co(function* a () {
-  csv.init();
   yield csv.append(data);
   yield csv.write('test.csv');
 }).then(function () {
