@@ -15,3 +15,7 @@
     * remove limit of node.js interpreter version
 * Change http example
     * Non-blocking http server with simple-csv example
+
+# 0.2.2
+* Change csv.js
+    * remove arrow function
