@@ -16,6 +16,10 @@ let data = [
   ['한', '글', '입', '력']
 ];
 
+for (let i = 0, len = 1300000; i < len; i++) {
+  data.push(data[i % 7]);
+}
+
 let server = http.createServer((req, res) => {
   var urlObj = url.parse(req.url, true, false);
 

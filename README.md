@@ -3,9 +3,6 @@ Simple-CSV
 
 Simple csv generator for Node.js. Simple CSV is super simple and easy.
 
-# Limit
-* use node.js >= 4.x.x and use strict mode
-
 # Function
 * `append` - set data on buffer and array
 * `write` - write file on disk
