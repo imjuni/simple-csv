@@ -1,13 +1,13 @@
 {
   "name": "simple-csv",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple CSV generator, no blocking set big size data",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node": ">= 4.x.x"
+    "node": ">= 0.12.x"
   },
   "repository": {
     "type": "git",

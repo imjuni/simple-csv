@@ -14,13 +14,18 @@ let data = [
   ['한', '글', '입', '력']
 ];
 
-let csv = new SimpleCSV(data);
+for (let i = 0, len = 1300000; i < len; i++) {
+  data.push(data[i % 7]);
+}
 
-co(function* a () {
+let csv = new SimpleCSV();
+
+co(function* () {
+  debug('Data length -> ', data.length);
   yield csv.append(data);
   yield csv.write('test.csv');
 }).then(function () {
-  debug('Complete, ... generated test.csv')
+  debug('Complete, ... generated test.csv');
 }).catch(function (err) {
   debug('Error caused, ...');
   debug(err.message);
