@@ -19,3 +19,20 @@
 # 0.2.2
 * Change csv.js
     * remove arrow function
+       
+# 0.2.3
+* Support another encoding option in iconv-lite (cp949, latin1, etc ...)
+    * see support encodings at https://github.com/ashtuchkin/iconv-lite/wiki/Supported-Encodings
+* Change examples in file.js (for support encodings)
+* Fix bug in row concat, Add comma with second line
+ex>
+```
+# before
+1, 2, 3, 4,
+, 1, 2, 3, 4,
+
+# after
+1, 2, 3, 4,
+1, 2, 3, 4,
+
+```

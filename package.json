@@ -1,6 +1,6 @@
 {
   "name": "simple-csv",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Simple CSV generator, no blocking set big size data",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/imjuni/simple-csv#readme",
   "dependencies": {
-    "debug": "^2.2.0"
+    "debug": "^2.2.0",
+    "iconv-lite": "^0.4.13"
   },
   "devDependencies": {
     "chai": "^3.5.0",
