@@ -36,3 +36,26 @@ ex>
 1, 2, 3, 4,
 
 ```
+
+# 0.2.4
+* Fix-bug in Microsoft Excel,
+    * Pass long string made by only number that is auto convert scientific notation by excel
+    * ex> 100620160321102705228100 -> 1.00620160321102E+23
+    * set excel option true, simple-csv add equal mark on string element. It will prevent auto converting
+    * see examples/files.js
+    
+```
+# example
+
+var csv2 = new SimpleCSV({ encoding: 'cp949', excel: true });
+co(function* () {
+  yield csv2.append(data);
+  yield csv2.write('test2.csv');
+}).then(function () {
+  debug('Complete, ... generated test.csv');
+}).catch(function (err) {
+  debug('Error caused, ...');
+  debug(err.message);
+  debug(err.stack);
+});
+```

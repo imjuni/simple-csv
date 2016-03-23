@@ -11,7 +11,8 @@ var data = [
   ['a', 'b,""', 'c""', 'd'],
   ['e', 'f', 'g', 'h\nh\nh'],
   ['한', '글', '입', '력'],
-  ['한', '글', '입', '력']
+  ['한', '글', '입', '력'],
+  ['100620160321102705228100', '100620160321102705228100', '100620160321102705228100', '100620160321102705228100']
 ];
 
 for (var i = 0, len = 130; i < len; i++) {
@@ -19,7 +20,7 @@ for (var i = 0, len = 130; i < len; i++) {
 }
 
 var csv = new SimpleCSV();
-var csv2 = new SimpleCSV({ encoding: 'cp949' });
+var csv2 = new SimpleCSV({ encoding: 'cp949', excel: true });
 
 co(function* () {
   debug('Data length -> ', data.length);
