@@ -59,3 +59,7 @@ co(function* () {
   debug(err.stack);
 });
 ```
+
+# 0.2.5
+* Fix-bug in Microsoft Excel mode
+    * Already contains comma element case invalid converted. fix it.
