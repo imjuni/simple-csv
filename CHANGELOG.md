@@ -79,3 +79,7 @@ aa,bb,cc, 1, 2, 3, 4,
 aa,bb,cc, 1, 2, 3, 4,
 "aa,bb,cc", 1, 2, 3, 4,        # valid csv format
 ```
+
+# 0.2.7
+* Add excel flag description in README.md
+* Remove test code

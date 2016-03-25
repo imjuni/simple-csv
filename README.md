@@ -18,6 +18,10 @@ that is setted 'utf8'
 * `interval` - If you set huge size data using append method, append method use setInterval
 instead of for, while loop. Because If you using on Express or http server, not blocking response.
 interval set setInterval interval
+* excel - If you use csv file in excel, enable this flag true. That is prevent long number,
+for example 1006201603211027052281012300 is automatic covert scientific notation. If
+this flag enable set true, converted ="1006201603211027052281012300" so that is prevent
+conversion to scientific notation. But default value is false.
 
 # Example
 If you more example, see below examples directory.
