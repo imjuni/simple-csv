@@ -25,7 +25,8 @@
     * see support encodings at https://github.com/ashtuchkin/iconv-lite/wiki/Supported-Encodings
 * Change examples in file.js (for support encodings)
 * Fix bug in row concat, Add comma with second line
-ex>
+* Example
+
 ```
 # before
 1, 2, 3, 4,
@@ -34,7 +35,6 @@ ex>
 # after
 1, 2, 3, 4,
 1, 2, 3, 4,
-
 ```
 
 # 0.2.4
@@ -43,11 +43,11 @@ ex>
     * ex> 100620160321102705228100 -> 1.00620160321102E+23
     * set excel option true, simple-csv add equal mark on string element. It will prevent auto converting
     * see examples/files.js
-    
-```
-# example
+* Example    
 
+```
 var csv2 = new SimpleCSV({ encoding: 'cp949', excel: true });
+
 co(function* () {
   yield csv2.append(data);
   yield csv2.write('test2.csv');
@@ -63,3 +63,19 @@ co(function* () {
 # 0.2.5
 * Fix-bug in Microsoft Excel mode
     * Already contains comma element case invalid converted. fix it.
+    
+    
+# 0.2.6
+* Fix-bug in Microsoft Excel mode
+    * Will be enable excel mode, that is not support have comma. fix-it
+* Example
+
+```
+# before
+aa,bb,cc, 1, 2, 3, 4,
+> ="aa,bb,cc", 1, 2, 3, 4,     # invalid csv format
+
+# after
+aa,bb,cc, 1, 2, 3, 4,
+"aa,bb,cc", 1, 2, 3, 4,        # valid csv format
+```
