@@ -10,11 +10,11 @@ Simple csv generator for Node.js. Simple CSV is super simple and easy.
 * `Buf` - get Buffer
 
 # Options
-* `encoding` - Encoding for Buffer class. If you don't set this value that is setted 'utf8'
-* `sep` - Column separation character. If you want tsv file, set '\t'. If you don't set this value
-that is setted 'utf8'
+* `encoding` - Encoding for Buffer class. If you don't set this value, then the default is 'utf8'
+* `sep` - Column separation character. If you want tsv file, set '\t'. If you don't set this value, then the default is
+','
 * `surrounder` - Surrounder for specific case, has linefeed or comma etc
-* `EOL` - Row separation character. If you don't set this value that is setted require('os').EOL
+* `EOL` - Row separation character. If you don't set this value, then the default is require('os').EOL
 * `interval` - If you set huge size data using append method, append method use setInterval
 instead of for, while loop. Because If you using on Express or http server, not blocking response.
 interval set setInterval interval
